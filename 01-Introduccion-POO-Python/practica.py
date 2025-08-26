@@ -56,7 +56,7 @@ class CuentaCorriente(CuentaBancaria):
         else:
             print(f"no se puede retirar un monto mayor al saldo de la cuenta")
 
-    def __str__(self) -> str:
+    def __str__(self) -> str: 
         return f"Cuenta Corriente de {self.titular.nombre}, saldo: {self._saldo}, sobregiro: {self.limite_de_sobregiro}"
 
 
@@ -81,7 +81,7 @@ class Banco:
             for i, cuenta in enumerate(self.cuentas, 1):
                 print(f"{i}. {cuenta}")
     
-    def seleccionar_cuenta(self):
+    def seleccionar_cuenta(self): #metodo nuevo para seleccionar la cuenta
         if not self.cuentas:
             print("No hay cuentas disponibles")
             return None
@@ -105,10 +105,10 @@ while True:
     print("4. Aplicar interes a una cuenta de ahorros")
     print("5. Mostrar cuentas")
     print("6. Salir")
-    # continuar con las demas opciones
+    # continuar con las demas opciones / se realizaron todas las opciones
     
     
-    #Consultar como validar que este input sea un numero del 1 al 6
+    #Consultar como validar que este input sea un numero del 1 al 6 / se valido con while y una lista
     while True:
         opcion = input("Elige una opcion: ")
         if opcion in ["1","2","3","4","5","6"]:
@@ -122,7 +122,7 @@ while True:
         persona = Persona(nombre=nombre,documento=documento)
 
         print("\nQue tipo de cuenta quiere crear")
-        #Validar tipo de dato entre str ahorro o corriente
+        #Validar tipo de dato entre str ahorro o corriente / se valido con while
         tipo = str(input("Escriba 'ahorro' o 'corriente': ").lower())
         while tipo not in ["ahorro","corriente"]:
             print("Tipo de cuenta no valida, reitente por favor")
@@ -163,5 +163,5 @@ while True:
         print("Opcion no valida")
 
 
-# terminar todas las opciones que son 2, 3, 4, ajustar la 5 para que imprima el objeto y no la referencia de memoria
-# Validar que todos los input sean del valor deseado, mostrando errores por consola sin try catch
+# terminar todas las opciones que son 2, 3, 4, ajustar la 5 para que imprima el objeto y no la referencia de memoria / Se realizaron las opciones faltantes y secreo un metodo nuevo para sufuncionamiento y  se soluciono con el metodo str y corrigiendo errores de ortografia
+# Validar que todos los input sean del valor deseado, mostrando errores por consola sin try catch / se validaron con while
